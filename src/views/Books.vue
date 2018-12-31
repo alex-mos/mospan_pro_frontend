@@ -1,27 +1,33 @@
 <template>
-  <div class="container">
-    <h2>Выберите книгу, которую хотите получить</h2>
+  <div>
+    <navigation />
 
-    <div class="row">
-      <div
-        v-for="(book, index) in books"
-        :key="index"
-        class="col-sm-4">
-        <book
-          :title="book.title"
-          :author="book.author"
-          :coverURL="book.coverURL"
-        />
+    <div class="container">
+      <h2>Выберите книгу, которую хотите получить</h2>
+
+      <div class="row">
+        <div
+          v-for="(book, index) in books"
+          :key="index"
+          class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+          <book
+            :title="book.title"
+            :author="book.author"
+            :coverURL="book.coverURL"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation.vue'
 import Book from '@/components/books/Book.vue'
 export default {
   name: 'books',
   components: {
+    Navigation,
     Book
   },
   data: function () {
@@ -50,3 +56,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+h2
+  margin-bottom 20px
+</style>
