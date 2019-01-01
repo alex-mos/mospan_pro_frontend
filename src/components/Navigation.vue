@@ -12,13 +12,13 @@
         <li>
           <router-link
             :to="{ name: 'cv' }">
-            CV
+            Резюме
           </router-link>
         </li>
         <li>
           <router-link
             :to="{ name: 'books' }">
-            books
+            Раздача книг
           </router-link>
         </li>
       </ul>
@@ -34,7 +34,7 @@ export default {
 
 <style lang="stylus" scoped>
 nav
-  background-color rgb(230, 230, 230)
+  background-color rgb(235, 235, 235)
 
 ul
   display flex

@@ -59,5 +59,5 @@ export default {
 
 <style lang="stylus" scoped>
 h2
-  margin-bottom 20px
+  margin-bottom 30px
 </style>

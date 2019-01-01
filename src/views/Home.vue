@@ -5,6 +5,7 @@
       <ul>
         <li><router-link to="/cv">работаю фронтендером уже шесть лет</router-link></li>
         <li><router-link to="/books">бесплатно раздаю книжки, которые прочитал</router-link></li>
+        <!--<li><router-link to="/timeline">смотрю, читаю и слушаю</router-link></li>-->
       </ul>
     </div>
   </div>

@@ -1,16 +1,50 @@
 <template>
-  <div class="book">
-    <img :src="coverURL" class="img-responsive">
-    <div class="author">
-      {{ author }}
+  <div ref="book">
+    <div
+      :class="[isOpen ? 'is-open' : '', 'button']">
+
+      <div class="button__back-side">
+        <div class="info">
+          <div class="author">
+            {{ author }}
+          </div>
+          <div class="author">
+            {{ title }}
+          </div>
+        </div>
+        <form
+          @submit.prevent="submit()">
+          <label for="telegram">Ваш логин в телеграме:</label>
+          <input
+            v-model="telegram"
+            id="telegram"
+            type="text">
+          <button
+            class="button__inner-button button__inner-button--no"
+            @click="isOpen = false">
+            отмена
+          </button>
+          <button
+            class="button__inner-button button__inner-button--yes"
+            @click="isOpen = false">
+            заказать
+          </button>
+        </form>
+      </div>
+
+      <div
+        class="button__front-side"
+        @click="isOpen = true">
+        <img :src="coverURL" class="img-responsive">
+      </div>
     </div>
-    <div class="author">
-      {{ title }}
-    </div>
+
   </div>
 </template>
 
 <script>
+import VanillaTilt from 'vanilla-tilt'
+
 export default {
   name: 'Book',
   props: {
@@ -29,11 +63,95 @@ export default {
       required: true,
       default: ''
     }
+  },
+
+  data: function () {
+    return {
+      isOpen: false,
+      telegram: ''
+    }
+  },
+
+  mounted () {
+    VanillaTilt.init(this.$refs.book, {
+      reverse: true,
+      scale: 1.1,
+      glare: true,
+      'max-glare': 0.5
+    })
+  },
+
+  methods: {
+    submit () {
+
+    }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-.book
-  width 100%
+.button
+  display: block;
+  position: relative;
+  transition: width 0.8s cubic-bezier(0.230, 1.000, 0.320, 1.000),
+    height 0.8s cubic-bezier(0.230, 1.000, 0.320, 1.000),
+    transform 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  text-align: center;
+
+  &__front-side
+    width 100%
+    cursor pointer
+    border 1px solid rgb(100, 100, 100)
+    box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
+    backface-visibility: hidden;
+    transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  &__back-side
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border 1px solid rgb(100, 100, 100)
+    box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
+    color: #222;
+    transform: translateZ(-2px) rotateX(180deg);
+    overflow: hidden;
+    transition: box-shadow 0.8s ease;
+    & p
+      margin-top: 27px;
+      margin-bottom: 25px;
+
+  &__inner-button
+    padding: 12px 20px;
+    margin: 0 5px;
+    background-color: transparent;
+    border: 0;
+    border-radius: 2px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    &:focus
+      outline: 0;
+
+    &--yes
+      background-color: #2196F3;
+      color: #fff;
+
+      &:hover
+        background-color: lighten(#2196F3, 10%);
+
+    &--no
+      color: #2196F3;
+
+      &:hover
+        background-color: #ddd;
+
+  &.is-open
+    transform: rotateX(180deg);
+
+    & .button__front-side
+      pointer-events: none;
+      line-height: 80px;
 </style>
