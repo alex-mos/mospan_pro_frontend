@@ -4,7 +4,9 @@
     class="book">
     <div
       :class="[isOpen ? 'is-open' : '', 'button']">
-      <div class="button__back-side">
+      <div
+        v-if="!isOrdered && !isPending"
+        class="button__back-side">
         <div class="info">
           <div class="author">
             {{ author }}
@@ -23,13 +25,21 @@
             </a>
           </div>
         </div>
-        <form
-          @submit.prevent="submit()">
-          <label for="telegram">Ваш логин в телеграме:</label>
-          <input
-            v-model="telegramLogin"
-            id="telegram"
-            type="text">
+        <div class="form-wrapper">
+          <form
+            @submit.prevent>
+            <label
+              :for="`telegram-${id}`">
+              Ваш логин в телеграме:
+            </label>
+            <input
+              v-model="telegramLogin"
+              :id="`telegram-${id}`"
+              type="text"
+              ref="telegramLogin"
+              @keydown.esc="cancel()"
+              @keydown.enter="submit(id)">
+          </form>
           <div class="buttons">
             <button
               class="button__inner-button button__inner-button--no"
@@ -39,29 +49,54 @@
             <button
               class="button__inner-button button__inner-button--yes"
               type="submit"
+              @click="submit(id)"
               :disabled="!telegramLogin">
               заказать
             </button>
           </div>
-        </form>
+        </div>
       </div>
 
       <div
+        v-if="isPending"
+        class="button__back-side button__back-side_loader">
+        <div class="img-wrapper">
+          <img src="/img/loader.svg" alt="loader">
+        </div>
+      </div>
+
+      <div
+        v-if="!isOrdered"
         class="button__front-side"
         @click="flipToBack()">
         <img :src="coverURL" class="img-responsive">
       </div>
-    </div>
 
+      <div
+        v-else
+        class="button__front-side button__front-side_ordered">
+        <img :src="coverURL" class="img-responsive">
+        <div
+          class="banner">
+          reserved
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import VanillaTilt from 'vanilla-tilt'
+import HTTP from '@/plugins/http'
 
 export default {
   name: 'Book',
   props: {
+    id: {
+      type: Number,
+      required: true,
+      default: 0
+    },
     title: {
       type: String,
       required: true,
@@ -98,7 +133,8 @@ export default {
     return {
       isOpen: false,
       telegramLogin: '',
-      isPending: false
+      isPending: false,
+      isOrdered: false
     }
   },
 
@@ -116,25 +152,43 @@ export default {
       this.$refs.book.vanillaTilt.settings.max = 0
       this.$refs.book.vanillaTilt.settings['max-glare'] = 0
     },
-    
+
     tiltEnable () {
       this.$refs.book.vanillaTilt.settings.max = 35
       this.$refs.book.vanillaTilt.settings['max-glare'] = 0.5
     },
-  
+
     flipToBack () {
       this.isOpen = true
       this.tiltDisable()
+      this.$refs.telegramLogin.focus()
     },
-    
+
     cancel () {
       this.isOpen = false
       this.telegramLogin = ''
       this.tiltEnable()
     },
-    
-    submit () {
 
+    submit (id) {
+      if (!this.telegramLogin) {
+        return
+      }
+      
+      console.log(`submit ${id} — ${this.telegramLogin}`)
+  
+      this.isPending = true
+      
+      setTimeout(() => {
+        this.isOrdered = true
+        this.isOpen = false
+        this.isPending = false
+      }, 3000)
+      
+      // HTTP.post('book', {
+      //   id,
+      //   telegramLogin: this.telegramLogin
+      // })
     }
   }
 }
@@ -143,37 +197,37 @@ export default {
 <style lang="stylus" scoped>
 .book
   margin-bottom 20px
-  
+
   .info
     margin-bottom 55px
-    
+
     .author
       line-height 1.5
       font-size 16px
-      
+
     .title
       margin-bottom 15px
       font-size 16px
       font-weight bolder
-      
+
     .edition
       font-size 12px
       line-height 2
-  
-  form
+
+  .form-wrapper
     position absolute
     width calc(100% - 40px)
-    bottom 30px
+    bottom 20px
     right 20px
-    
+
     label
       line-height 3
-    
+
     input[type=text]
-      margin-bottom 15px
+      margin 0 0 15px 0
       padding 3px 7px
       width 100%
-      
+
     .buttons
       text-align right
 
@@ -194,6 +248,24 @@ export default {
     backface-visibility: hidden
     transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
+    &_ordered
+      cursor default
+      border 1px solid rgb(190, 190, 190)
+
+      img
+        opacity 0.3
+
+      .banner
+        position absolute
+        top 150px
+        width 100%
+        padding 20px 0
+        text-align center
+        color rgb(150, 150, 150)
+        font-size 42px
+        background-color rgb(255, 209, 126)
+        transform skewY(-12deg)
+
   &__back-side
     position absolute
     width 100%
@@ -206,6 +278,19 @@ export default {
     box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
     transform translateZ(-2px) rotateX(180deg)
     transition box-shadow 0.8s ease
+
+    &_loader
+      display flex
+      flex-direction column
+      justify-content center
+      background-color rgb(235, 235, 235)
+      
+      .img-wrapper
+        width 100%
+        text-align center
+
+        img
+          width 60px
 
   &.is-open
     transform rotateX(180deg)
@@ -224,16 +309,19 @@ export default {
     cursor pointer
     transition background 0.15s ease
 
+    &:last-child
+      margin-right 0
+
     &:focus
       outline 0
 
     &:disabled
       cursor not-allowed
       background-color lighten(#2196F3, 60%)
-      
+
       &:hover
         background-color lighten(#2196F3, 60%)
-      
+
     &--yes
       background-color #2196F3
       color #fff

@@ -11,6 +11,7 @@
           :key="index"
           class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <book
+            :id="book.id"
             :title="book.title"
             :author="book.author"
             :edition="book.edition"
@@ -37,6 +38,7 @@ export default {
     return {
       books: [
         {
+          id: 1,
           title: 'Обои-убийцы: как выжить в собственной квартире',
           author: 'Дарья Саркисян',
           edition: 'мягкая обложка, белая бумага',
@@ -45,6 +47,7 @@ export default {
           goodreadsLink: 'https://www.goodreads.com/book/show/41744541'
         },
         {
+          id: 2,
           title: 'Ложная слепота',
           author: 'Питер Уоттс',
           edition: 'твёрдая обложка, жёлтая бумага',
@@ -53,6 +56,7 @@ export default {
           goodreadsLink: 'https://www.goodreads.com/book/show/27211781'
         },
         {
+          id: 3,
           title: 'Нейромант',
           author: 'Уильям Гибсон',
           edition: 'мягкая обложка, жёлтая бумага',
