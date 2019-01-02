@@ -11,7 +11,7 @@
       <p>In my spare time I upgrade my professional skills by learning at KhanAcademy, CodeSchool, Coursera,
         freeCodeCamp.</p>
 
-      <h2>Technology used in production</h2>
+      <h2>Technology I use in production</h2>
       <table>
         <tr>
           <td>OS</td>

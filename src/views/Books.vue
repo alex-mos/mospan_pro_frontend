@@ -9,10 +9,13 @@
         <div
           v-for="(book, index) in books"
           :key="index"
-          class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+          class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <book
             :title="book.title"
             :author="book.author"
+            :edition="book.edition"
+            :status="book.status"
+            :goodreadsLink="book.goodreadsLink"
             :coverURL="book.coverURL"
           />
         </div>
@@ -34,22 +37,28 @@ export default {
     return {
       books: [
         {
-          title: 'Обои-убийцы',
+          title: 'Обои-убийцы: как выжить в собственной квартире',
           author: 'Дарья Саркисян',
+          edition: 'мягкая обложка, белая бумага',
+          status: 'free', // free, reserved, given
           coverURL: '/bookcovers/poison.jpg',
-          goodreadsLink: ''
+          goodreadsLink: 'https://www.goodreads.com/book/show/41744541'
         },
         {
           title: 'Ложная слепота',
           author: 'Питер Уоттс',
+          edition: 'твёрдая обложка, жёлтая бумага',
+          status: 'free',
           coverURL: '/bookcovers/blindsight.jpg',
-          goodreadsLink: ''
+          goodreadsLink: 'https://www.goodreads.com/book/show/27211781'
         },
         {
           title: 'Нейромант',
           author: 'Уильям Гибсон',
+          edition: 'мягкая обложка, жёлтая бумага',
+          status: 'free',
           coverURL: '/bookcovers/neuromancer.jpg',
-          goodreadsLink: ''
+          goodreadsLink: 'https://www.goodreads.com/book/show/33838639'
         }
       ]
     }
