@@ -4,7 +4,7 @@
 
     <div class="container">
       <h2>Выберите книгу, которую хотите получить</h2>
-  
+
       <div
         v-if="isPending"
         class="button__back-side button__back-side_loader">
@@ -12,7 +12,7 @@
           <img src="/img/loader.svg" alt="loader">
         </div>
       </div>
-      
+
       <div
         v-else
         class="row">
@@ -30,12 +30,12 @@
             :goodreadsLink="book.goodreads_link"
             :coverURL="book.cover_url"
           />
-          
+
           <reserved-book
             v-if="book.status === 'reserved'"
             :coverURL="book.cover_url"
           />
-  
+
           <sent-book
             v-if="book.status === 'sent'"
             :coverURL="book.cover_url"
@@ -66,7 +66,7 @@ export default {
       books: []
     }
   },
-  
+
   mounted () {
     this.isPending = true
     http.get('books/')

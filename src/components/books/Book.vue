@@ -87,7 +87,7 @@
 
 <script>
 import VanillaTilt from 'vanilla-tilt'
-import HTTP from '@/plugins/http'
+import http from '@/plugins/http'
 
 export default {
   name: 'Book',
@@ -174,21 +174,19 @@ export default {
       if (!this.telegramLogin) {
         return
       }
-      
-      console.log(`submit ${id} — ${this.telegramLogin}`)
-  
       this.isPending = true
-      
-      setTimeout(() => {
-        this.isOrdered = true
-        this.isOpen = false
-        this.isPending = false
-      }, 3000)
-      
-      // HTTP.post('book', {
-      //   id,
-      //   telegramLogin: this.telegramLogin
-      // })
+      let formData = new FormData()
+      formData.append('telegram', this.telegramLogin)
+      http.post(`order/${id}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+        .then(() => {
+          this.isOrdered = true
+          this.isOpen = false
+          this.isPending = false
+        })
     }
   }
 }
@@ -284,7 +282,7 @@ export default {
       flex-direction column
       justify-content center
       background-color rgb(235, 235, 235)
-      
+
       .img-wrapper
         width 100%
         text-align center
