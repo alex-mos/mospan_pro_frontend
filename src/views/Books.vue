@@ -21,12 +21,23 @@
           :key="index"
           class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <book
+            v-if="book.status === 'free'"
             :id="book.id"
             :title="book.title"
             :author="book.author"
             :edition="book.edition"
             :status="book.status"
             :goodreadsLink="book.goodreads_link"
+            :coverURL="book.cover_url"
+          />
+          
+          <reserved-book
+            v-if="book.status === 'reserved'"
+            :coverURL="book.cover_url"
+          />
+  
+          <sent-book
+            v-if="book.status === 'sent'"
             :coverURL="book.cover_url"
           />
         </div>
@@ -39,11 +50,15 @@
 import http from '@/plugins/http'
 import Navigation from '@/components/Navigation.vue'
 import Book from '@/components/books/Book.vue'
+import ReservedBook from '@/components/books/ReservedBook.vue'
+import SentBook from '@/components/books/SentBook.vue'
 export default {
   name: 'books',
   components: {
     Navigation,
-    Book
+    Book,
+    ReservedBook,
+    SentBook
   },
   data: function () {
     return {
