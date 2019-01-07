@@ -32,4 +32,4 @@ COPY . .
 # build app for production with minification
 RUN npm run build
 
-CMD [ "http-server", "dist", "-a 0.0.0.0" ]
+CMD [ "http-server", "dist -a 0.0.0.0" ]
