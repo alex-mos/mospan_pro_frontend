@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: mospan_pro_frontend
+    restart: always
+    build: .
+    networks:
+      mospan:
+    ports:
+      - '8080:8080'
+    env_file:
+      - .env
+
+networks:
+  mospan:
+    external: true
