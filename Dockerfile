@@ -7,7 +7,7 @@ COPY . .
 RUN npm run build
 
 FROM nginx:stable-alpine as production-stage
-#WORKDIR /app
+WORKDIR /app
 # Copy in the static build assets
 COPY dist/ /usr/local/var/www/mospan.pro
 # Copy in the nginx config file
