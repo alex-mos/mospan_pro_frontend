@@ -9,7 +9,7 @@
   
           <section>
           <h2>Summary</h2>
-          <p>5 years in frontend development.</p>
+          <p>6 years in frontend development.</p>
           <p>In spare time I upgrade my professional skills by learning at KhanAcademy, CodeSchool, Coursera,
             freeCodeCamp.</p>
           </section>
@@ -118,7 +118,7 @@
     
             <p><em>jr. frontend developer ( March 2013 – May 2014 )</em></p>
             <p>Creating diverse websites with HTML, CSS and jQuery;</p>
-            <p>Supporting and improvement of sites on various platforms such as Drupal, ModX, Symphony etc.</p>
+            <p>Support and improvement of sites on various platforms such as Drupal, ModX, Symphony etc.</p>
           </section>
   
           <section>
