@@ -6,7 +6,7 @@
 
 <style lang="stylus">
 body
-  font-family 'PT Serif Caption', serif
+  font-family 'IBM Plex Sans', sans-serif
   color rgb(75, 75, 75)
   background-color rgb(247, 247, 247)
 </style>

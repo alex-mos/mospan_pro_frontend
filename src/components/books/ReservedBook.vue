@@ -25,7 +25,7 @@ export default {
 <style lang="stylus" scoped>
 .book
   position relative
-  margin-bottom 20px
+  margin-bottom 30px
 
   .front-side
     width 100%

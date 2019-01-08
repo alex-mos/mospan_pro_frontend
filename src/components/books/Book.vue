@@ -143,7 +143,8 @@ export default {
       reverse: true,
       scale: 1.1,
       glare: true,
-      'max-glare': 0.5
+      'max-glare': 0.5,
+      gyroscope: false
     })
   },
 
@@ -194,7 +195,7 @@ export default {
 
 <style lang="stylus" scoped>
 .book
-  margin-bottom 20px
+  margin-bottom 30px
 
   .info
     margin-bottom 55px
@@ -242,7 +243,7 @@ export default {
     width 100%
     cursor pointer
     border 1px solid rgb(100, 100, 100)
-    box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
+    box-shadow 0 0 20px 0 rgba(0, 0, 0, .1)
     backface-visibility: hidden
     transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
 
@@ -273,7 +274,7 @@ export default {
     text-align center
     overflow hidden
     border 1px solid rgb(100, 100, 100)
-    box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
+    box-shadow 0 0 20px 0 rgba(0, 0, 0, .1)
     transform translateZ(-2px) rotateX(180deg)
     transition box-shadow 0.8s ease
 

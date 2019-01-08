@@ -4,6 +4,6 @@
 
 Install docker then run:
 ```
-docker network create --attachable mospan <name>
+docker network create --attachable mospan
 docker-compose up
 ```

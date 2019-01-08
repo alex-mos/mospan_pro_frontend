@@ -34,6 +34,7 @@ export default {
 
 <style lang="stylus" scoped>
 nav
+  border-bottom 3px solid rgb(170, 170, 170)
   background-color rgb(235, 235, 235)
 
 ul
@@ -41,7 +42,11 @@ ul
   margin 0
   padding 0
   list-style none
+  font-family 'IBM Plex Sans', sans-serif
   font-size 20px
+
+  @media (max-width 768px)
+    flex-direction column
 
   a
     display block

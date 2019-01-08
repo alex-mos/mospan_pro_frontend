@@ -23,7 +23,11 @@ export default {
     display flex
     flex-direction column
     justify-content center
-    font-size 24px
+    font-family 'PT Serif Caption', serif
+    font-size 26px
+
+    @media (max-width 768px)
+      font-size 18px
 
   ul
     list-style none
