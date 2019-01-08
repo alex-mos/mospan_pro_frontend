@@ -69,7 +69,7 @@ export default {
 
   mounted () {
     this.isPending = true
-    http.get('books/')
+    http.get('books')
       .then(res => {
         this.books = res.data.data
         this.isPending = false
