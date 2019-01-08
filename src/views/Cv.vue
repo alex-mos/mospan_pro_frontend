@@ -6,14 +6,14 @@
       <div class="row">
         <div class="col-xs-12">
           <h1>Alexander Mospan, frontend developer</h1>
-  
+
           <section>
           <h2>Summary</h2>
           <p>6 years in frontend development.</p>
           <p>In spare time I upgrade my professional skills by learning at KhanAcademy, CodeSchool, Coursera,
             freeCodeCamp.</p>
           </section>
-  
+
           <section>
             <h2>Technology I use in production</h2>
             <table>
@@ -47,41 +47,45 @@
               </tr>
             </table>
           </section>
-          
+
           <section>
             <h2>Other technology</h2>
             <p>React, NodeJS, Electron, MongoDB, Docker</p>
           </section>
-  
+
           <section>
             <h2>Code Examples</h2>
             <ul>
               <li>
-                <a href="https://github.com/alex-mos/exp/blob/master/examples/geotiff-upload.js">
+                <a href="https://github.com/alex-mos/exp/blob/master/examples/geotiff-upload.js" target="_blank">
                   Ember service for large file uploading with sha-256 checksum and resuming after network error
                 </a>
               </li>
               <li>
                 This site:
-                <a href="https://github.com/alex-mos/mospan_pro_frontend">frontend</a>,
-                <a href="https://github.com/alex-mos/mospan_pro_backend">backend</a>,
+                <a href="https://github.com/alex-mos/mospan_pro_frontend" target="_blank">
+                  frontend
+                </a>,
+                <a href="https://github.com/alex-mos/mospan_pro_backend" target="_blank">
+                  backend
+                </a>
               </li>
             </ul>
           </section>
-  
+
           <section>
             <h2>Employers list</h2>
             <p>(many freelance projects in between working as employee.)</p>
-    
+
             <h3>Media Target</h3>
-    
+
             <p><em>frontend developer ( April 2018 – Present day )</em></p>
             <p>Creating SPA with VueJS for various web-projects;</p>
             <p>Dynamic charts with realtime data updating;</p>
             <p>Websocket usage for communicating with server.</p>
-    
+
             <h3>
-              <a href="http://exactfarming.com">
+              <a href="http://exactfarming.com" target="_blank">
                 ExactFarming
               </a>
             </h3>
@@ -89,19 +93,19 @@
             <p>Development complex web-application for farm business using EmberJS;</p>
             <p>Numerous tasks related to geolocation and LeafletJS;</p>
             <p>Unit and integration testing.</p>
-    
+
             <h3>
-              <a href="http://breffi.ru">
+              <a href="http://breffi.ru" target="_blank">
                 Breffi
               </a>
             </h3>
-    
+
             <p><em>Team-lead frontend developer ( March 2016 – February 2017 )</em></p>
             <p>Creating b2b-application for meds supply accounting system and launching marketing campaigns.</p>
             <p>coordination of frontend department process.</p>
-    
+
             <h3>
-              <a href="http://emias.info">
+              <a href="http://emias.info" target="_blank">
                 Emias.info
               </a>
             </h3>
@@ -109,18 +113,18 @@
             <p>Development of application for appointments in public hospitals used by more than 400 000 patients
               monthly;</p>
             <p>Creating AngularJS modules, developing of business logic using VanillaJS and HTML-based tasks.</p>
-    
+
             <h3>
-              <a href="http://sijeko.ru">
+              <a href="http://sijeko.ru" target="_blank">
                 Sijeko
               </a>
             </h3>
-    
+
             <p><em>jr. frontend developer ( March 2013 – May 2014 )</em></p>
             <p>Creating diverse websites with HTML, CSS and jQuery;</p>
             <p>Support and improvement of sites on various platforms such as Drupal, ModX, Symphony etc.</p>
           </section>
-  
+
           <section>
             <h2>Education</h2>
             <h3>
@@ -129,7 +133,7 @@
                 Belgorod Shukhov State Technology University
               </a>
             </h3>
-  
+
           <table>
             <tr>
               <td>Mechanical engenering</td>
@@ -148,7 +152,7 @@
             </tr>
           </table>
           </section>
-  
+
           <section>
             <h2>Languages</h2>
             <ul>
@@ -186,20 +190,20 @@ export default {
   margin-bottom 30px
   background-color white
   border 3px solid rgb(170, 170, 170)
-  
+
   section
     padding 10px 15px
 
   h1
     padding 10px 15px
-    
+
   p
     font-size 20px
-    
+
   ul
     li
       font-size 20px
-    
+
   table
     width 100%
     font-size 20px
