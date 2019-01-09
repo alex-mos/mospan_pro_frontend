@@ -5,50 +5,26 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <h1>Alexander Mospan, frontend developer</h1>
+          <section>
+            <h1>Alexander Mospan</h1>
+            <h3 class="subtitle">31 y.o, Moscow, Russia</h3>
+          </section>
 
           <section>
-          <h2>Summary</h2>
           <p>6 years in frontend development.</p>
-          <p>In spare time I upgrade my professional skills by learning at KhanAcademy, CodeSchool, Coursera,
-            freeCodeCamp.</p>
-          <p>I use <a href="https://en.wikipedia.org/wiki/Getting_Things_Done">GTD</a> as a main life management system
-            and I think before you will be a good programmer you shoud become a good program.
+          <p>In spare time I upgrade my professional skills by learning at Coursera, freeCodeCamp, CodeWars, KhanAcademy.</p>
+          <p>I use <a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank">GTD</a> as a main life management system.
           </p>
           </section>
 
           <section>
             <h2>Technology I use in production</h2>
-            <table>
-              <tr>
-                <td>OS</td>
-                <td>macOS, Linux</td>
-              </tr>
-              <tr>
-                <td>IDE</td>
-                <td>WebStorm</td>
-              </tr>
-              <tr>
-                <td>VCS</td>
-                <td>git</td>
-              </tr>
-              <tr>
-                <td>Language</td>
-                <td>Javascript (ES5-6)</td>
-              </tr>
-              <tr>
-                <td>Frontend Frameworks</td>
-                <td>VueJS, EmberJS</td>
-              </tr>
-              <tr>
-                <td>Transport layer</td>
-                <td>REST API, WebSocket</td>
-              </tr>
-              <tr>
-                <td>Other</td>
-                <td>HTML5, varios CSS preprocessors and UI frameworks</td>
-              </tr>
-            </table>
+            <p>
+              I create client web applications with VueJS (EmberJS and AngularJS in the past).<br>
+              Although a have strong HTML and CSS skills, sometimes I use component libraries such as Vuetify or Bootstrap.<br>
+              Usually, I utilize REST of WebSocket API.<br>
+              I work on macOS with WebStorm.
+            </p>
           </section>
 
           <section>
@@ -74,7 +50,7 @@
 
           <section>
             <h2>Experience</h2>
-            <p>(many freelance projects in between working as employee.)</p>
+            <p>(many freelance projects in between working as an employee.)</p>
 
             <ul class="companies">
               <li>
@@ -145,24 +121,18 @@
                 Belgorod Shukhov State Technology University
               </a>
             </h3>
-
-          <table>
-            <tr>
-              <td>Mechanical engenering</td>
-              <td>graduate</td>
-              <td>2004 – 2009</td>
-            </tr>
-            <tr>
-              <td>Translator for professional interaction</td>
-              <td>graduate</td>
-              <td>2008 – 2010</td>
-            </tr>
-            <tr>
-              <td>Architectural and Building Sciences</td>
-              <td>PhD</td>
-              <td>2009 – 2012</td>
-            </tr>
-          </table>
+            
+            <ul>
+              <li>
+                Mechanical engenering graduate (2004 – 2009)
+              </li>
+              <li>
+                Translator for professional interaction graduate (2004 – 2009)
+              </li>
+              <li>
+                Architectural and Building Sciences PhD (2009 – 2012)
+              </li>
+            </ul>
           </section>
 
           <section>
@@ -200,17 +170,19 @@ export default {
 .row
   margin-top 30px
   margin-bottom 30px
+  padding-bottom 20px
   background-color white
   border 3px solid rgb(170, 170, 170)
 
   section
     padding 10px 15px
 
-  h1
-    margin-bottom 0
-    padding 20px 15px 5px 15px
+  .subtitle
+    margin-top 0
 
   p
+    margin-bottom 0
+    line-height 1.5
     font-size 20px
 
   ul
@@ -234,10 +206,6 @@ export default {
 
       &:last-child
         margin-bottom 0
-
-      p
-        margin-bottom 0
-        line-height 1.5
 
   table
     width 100%
