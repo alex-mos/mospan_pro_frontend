@@ -8,5 +8,5 @@
 body
   font-family 'IBM Plex Sans', sans-serif
   color rgb(75, 75, 75)
-  background-color rgb(247, 247, 247)
+  background-color rgb(250, 250, 250)
 </style>

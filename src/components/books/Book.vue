@@ -238,7 +238,6 @@ export default {
     transform 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275)
   transform-style preserve-3d
   transform-origin 50% 50%
-  backface-visibility: hidden
 
   &__front-side
     width 100%
@@ -246,6 +245,7 @@ export default {
     border 1px solid rgb(100, 100, 100)
     box-shadow 0 0 20px 0 rgba(0, 0, 0, .1)
     transition: background 0.15s ease, line-height 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+    backface-visibility: hidden
 
     &_ordered
       cursor default
@@ -273,10 +273,12 @@ export default {
     color #222
     text-align center
     overflow hidden
+    background-color rgb(250, 250, 250)
     border 1px solid rgb(100, 100, 100)
     box-shadow 0 0 20px 0 rgba(0, 0, 0, .1)
-    transform translateZ(-2px) rotateX(180deg)
+    transform rotateX(180deg)
     transition box-shadow 0.8s ease
+    backface-visibility: hidden
 
     &_loader
       display flex
