@@ -33,7 +33,7 @@ export default {
     list-style none
 
     li:before
+      display inline-block
       margin 0 .3em 0 -1em
-      display: inline-block
-      content: "–"
+      content "–"
 </style>
