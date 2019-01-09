@@ -4,6 +4,9 @@
 
     <div class="container">
       <h2>Выберите книгу, которую хотите получить</h2>
+      <p>
+        Если мы иногда видимся — передам книгу при встрече. Если нет — уточню почтовый адрес через телеграм и отправлю посылкой.
+      </p>
 
       <div
         v-if="isPending"
@@ -80,5 +83,9 @@ export default {
 
 <style lang="stylus" scoped>
 h2
-  margin-bottom 30px
+  margin-bottom 10px
+
+p
+  margin-bottom 35px
+  font-size 18px
 </style>
