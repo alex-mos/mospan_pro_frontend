@@ -20,7 +20,7 @@
         <div
           v-for="(book, index) in books"
           :key="index"
-          class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-0 col-md-4 col-lg-3">
+          class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-lg-3">
           <book
             v-if="book.status === 'free'"
             :id="book.id"
