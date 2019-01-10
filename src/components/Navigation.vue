@@ -39,6 +39,9 @@ nav
   border-bottom 3px solid rgb(170, 170, 170)
   background-color rgb(235, 235, 235)
 
+.container
+  padding 0
+
 ul
   display flex
   margin 0
@@ -68,6 +71,9 @@ ul
         font-size 24px
         text-transform uppercase
 
+        @media (max-width 768px)
+          padding 11px 17px
+
   .router-link-exact-active
     position relative
     top 3px
@@ -76,4 +82,10 @@ ul
     border-right 3px solid rgb(170, 170, 170)
     border-left 3px solid rgb(170, 170, 170)
     background rgb(247, 247, 247)
+
+    @media (max-width 768px)
+      padding 11px 17px
+      border none
+      border-top 3px solid rgb(170, 170, 170)
+      border-bottom 3px solid rgb(170, 170, 170)
 </style>

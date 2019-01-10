@@ -312,6 +312,10 @@ export default {
   background-color white
   border 3px solid rgb(170, 170, 170)
 
+  @media (max-width 768px)
+    margin 0
+    border none
+
   section
     padding 10px 15px
 
