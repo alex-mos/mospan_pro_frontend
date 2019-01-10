@@ -1,7 +1,5 @@
 <template>
   <div>
-    <navigation />
-
     <div class="container">
       <h2>Выберите книгу, которую хотите получить</h2>
       <p>
@@ -51,14 +49,12 @@
 
 <script>
 import http from '@/plugins/http'
-import Navigation from '@/components/Navigation.vue'
 import Book from '@/components/books/Book.vue'
 import ReservedBook from '@/components/books/ReservedBook.vue'
 import SentBook from '@/components/books/SentBook.vue'
 export default {
   name: 'books',
   components: {
-    Navigation,
     Book,
     ReservedBook,
     SentBook
@@ -69,7 +65,6 @@ export default {
       books: []
     }
   },
-
   mounted () {
     this.isPending = true
     http.get('books')

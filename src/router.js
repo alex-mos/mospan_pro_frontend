@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home'
-import Cv from './views/Cv'
-import Books from './views/Books'
+import Home from './pages/Home'
+import Cv from './pages/Cv'
+import Books from './pages/Books'
+import Error404 from './pages/404'
 
 Vue.use(Router)
 
@@ -13,6 +14,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
+      meta: { layout: 'clean' },
       component: Home
     },
     {
@@ -24,6 +26,11 @@ export default new Router({
       path: '/books',
       name: 'books',
       component: Books
+    },
+    {
+      path: '*',
+      name: '404',
+      component: Error404
     }
   ]
 })

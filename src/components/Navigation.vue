@@ -55,6 +55,7 @@ ul
       display block
       padding 11px 17px
       color rgb(90, 90, 90)
+      text-decoration none
       border-right 3px solid rgb(235, 235, 235)
       border-left 3px solid rgb(235, 235, 235)
 
