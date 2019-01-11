@@ -146,7 +146,6 @@ export default {
 
   mounted () {
     VanillaTilt.init(this.$refs.book, {
-      reverse: true,
       glare: true,
       'max-glare': 0.5,
       gyroscope: false
@@ -197,6 +196,14 @@ export default {
       })
         .then(() => {
           this.isOrdered = true
+          this.isOpen = false
+          this.isPending = false
+        })
+        .catch((err) => {
+          this.$toasted.error(err)
+        })
+        .finally(() => {
+          this.isOrdered = false
           this.isOpen = false
           this.isPending = false
         })
