@@ -29,18 +29,12 @@
             :edition="book.edition"
             :status="book.status"
             :goodreadsLink="book.goodreads_link"
-            :coverURL="book.cover_url"
-          />
+            :coverURL="book.cover_url"/>
 
-          <reserved-book
-            v-if="book.status === 'reserved'"
-            :coverURL="book.cover_url"
-          />
-
-          <sent-book
-            v-if="book.status === 'sent'"
-            :coverURL="book.cover_url"
-          />
+          <given-book
+            v-else
+            :status="book.status"
+            :coverURL="book.cover_url"/>
         </div>
       </div>
     </div>
@@ -50,14 +44,12 @@
 <script>
 import http from '@/plugins/http'
 import Book from '@/components/books/Book.vue'
-import ReservedBook from '@/components/books/ReservedBook.vue'
-import SentBook from '@/components/books/SentBook.vue'
+import GivenBook from '@/components/books/GivenBook.vue'
 export default {
   name: 'books',
   components: {
     Book,
-    ReservedBook,
-    SentBook
+    GivenBook
   },
   data: function () {
     return {

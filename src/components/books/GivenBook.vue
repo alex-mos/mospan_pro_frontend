@@ -2,8 +2,16 @@
   <div class="book">
     <div class="front-side">
       <img :src="coverURL" class="img-responsive">
-      <div class="banner">
-        sent
+      <div
+        v-if="status === 'reserved'"
+        class="banner banner_reserved">
+        обещана
+      </div>
+
+      <div
+        v-if="status === 'sent'"
+        class="banner banner_sent">
+        отправлена
       </div>
     </div>
   </div>
@@ -11,9 +19,14 @@
 
 <script>
 export default {
-  name: 'SentBook',
+  name: 'GivenBook',
   props: {
     coverURL: {
+      type: String,
+      required: true,
+      default: ''
+    },
+    status: {
       type: String,
       required: true,
       default: ''
@@ -26,12 +39,13 @@ export default {
 .book
   position relative
   margin-bottom 30px
+  max-width 500px
 
   .front-side
     width 100%
     cursor default
     border 1px solid rgb(190, 190, 190)
-    box-shadow 0 20px 70px -10px rgba(51, 51, 51, 0.3), 0 50px 100px 0 rgba(51, 51, 51, 0.1)
+    box-shadow 0 0 20px 0 rgba(0, 0, 0, .1)
 
     img
       opacity 0.3
@@ -45,6 +59,11 @@ export default {
       text-align center
       color rgb(150, 150, 150)
       font-size 42px
-      background-color rgb(238, 241, 119)
       transform skewY(-12deg)
+
+      &_reserved
+        background-color rgb(255, 209, 126)
+
+      &_sent
+        background-color rgb(238, 241, 119)
 </style>

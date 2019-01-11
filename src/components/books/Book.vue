@@ -198,6 +198,7 @@ export default {
 <style lang="stylus" scoped>
 .book
   margin-bottom 30px
+  max-width 500px
 
   .info
     margin-bottom 55px
