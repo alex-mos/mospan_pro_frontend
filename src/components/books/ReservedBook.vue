@@ -39,7 +39,8 @@ export default {
     .banner
       position absolute
       top 150px
-      width 100%
+      left -1px
+      width calc(100% + 1px)
       padding 20px 0
       text-align center
       color rgb(150, 150, 150)

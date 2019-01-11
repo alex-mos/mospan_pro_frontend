@@ -41,18 +41,17 @@
               @keydown.enter="submit(id)">
           </form>
           <div class="buttons">
-            <button
-              class="button__inner-button button__inner-button--no"
+            <Button
               @click="cancel()">
               отмена
-            </button>
-            <button
-              class="button__inner-button button__inner-button--yes"
+            </Button>
+            <Button
+              primary
               type="submit"
               @click="submit(id)"
               :disabled="!telegramLogin">
               заказать
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -86,11 +85,15 @@
 </template>
 
 <script>
+import Button from '@/components/ui/Button'
 import VanillaTilt from 'vanilla-tilt'
 import http from '@/plugins/http'
 
 export default {
   name: 'Book',
+  components: {
+    Button
+  },
   props: {
     id: {
       type: Number,
@@ -141,7 +144,6 @@ export default {
   mounted () {
     VanillaTilt.init(this.$refs.book, {
       reverse: true,
-      scale: 1.1,
       glare: true,
       'max-glare': 0.5,
       gyroscope: false
@@ -257,7 +259,8 @@ export default {
       .banner
         position absolute
         top 150px
-        width 100%
+        left -1px
+        width calc(100% + 1px)
         padding 20px 0
         text-align center
         color rgb(150, 150, 150)
@@ -298,41 +301,4 @@ export default {
 
     & .button__front-side
       pointer-events none
-
-  // выделить в отдельный компонент
-  &__inner-button
-    padding 5px 12px
-    margin 0 5px
-    background-color transparent
-    border 0
-    border-radius 2px
-    font-size 16px
-    cursor pointer
-    transition background 0.15s ease
-
-    &:last-child
-      margin-right 0
-
-    &:focus
-      outline 0
-
-    &:disabled
-      cursor not-allowed
-      background-color lighten(#2196F3, 60%)
-
-      &:hover
-        background-color lighten(#2196F3, 60%)
-
-    &--yes
-      background-color #2196F3
-      color #fff
-
-      &:hover
-        background-color darken(#2196F3, 20%)
-
-    &--no
-      color #2196F3
-
-      &:hover
-        background-color #ddd
 </style>
