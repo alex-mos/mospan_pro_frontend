@@ -15,9 +15,7 @@ export default {
       type: Boolean
     },
     type: {
-      type: String,
-      required: true,
-      default: ''
+      type: String
     }
   }
 }

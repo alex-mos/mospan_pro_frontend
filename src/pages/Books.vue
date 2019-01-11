@@ -22,14 +22,15 @@
           :key="index"
           class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-lg-3">
           <book
-            v-if="book.status === 'free'"
+            v-if="book.status === 'free' || isDemo"
             :id="book.id"
             :title="book.title"
             :author="book.author"
             :edition="book.edition"
             :status="book.status"
             :goodreadsLink="book.goodreads_link"
-            :coverURL="book.cover_url"/>
+            :coverURL="book.cover_url"
+            :isDemo="isDemo"/>
 
           <given-book
             v-else
@@ -55,6 +56,12 @@ export default {
     return {
       isPending: true,
       books: []
+    }
+  },
+  computed: {
+    // Демо-режим. Все книжки всегда доступны. При заказе не отправляется запрос на сервер.
+    isDemo () {
+      return Boolean(this.$route.query.demo)
     }
   },
   mounted () {

@@ -5,7 +5,8 @@
         <li>
           <router-link
             class="main"
-            :to="{ name: 'home' }">
+            :to="{ name: 'home' }"
+            exact>
             mospan.pro
           </router-link>
         </li>
@@ -74,14 +75,14 @@ ul
         @media (max-width 768px)
           padding 11px 17px
 
-  .router-link-exact-active
+  .router-link-active
     position relative
     top 3px
     padding 8px 17px 14px 17px
     pointer-events none
     border-right 3px solid rgb(170, 170, 170)
     border-left 3px solid rgb(170, 170, 170)
-    background rgb(247, 247, 247)
+    background-color rgb(250, 250, 250)
 
     @media (max-width 768px)
       padding 11px 17px

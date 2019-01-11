@@ -77,7 +77,7 @@
         <img :src="coverURL" class="img-responsive">
         <div
           class="banner">
-          reserved
+          обещана
         </div>
       </div>
     </div>
@@ -129,6 +129,9 @@ export default {
       type: String,
       required: true,
       default: ''
+    },
+    isDemo: {
+      type: Boolean
     }
   },
 
@@ -177,6 +180,13 @@ export default {
       if (!this.telegramLogin) {
         return
       }
+
+      // демо-заказ
+      if (this.isDemo) {
+        this.demoSubmit()
+        return
+      }
+
       this.isPending = true
       let formData = new FormData()
       formData.append('telegram', this.telegramLogin)
@@ -190,6 +200,15 @@ export default {
           this.isOpen = false
           this.isPending = false
         })
+    },
+
+    demoSubmit () {
+      this.isPending = true
+      setTimeout(() => {
+        this.isOrdered = true
+        this.isOpen = false
+        this.isPending = false
+      }, 3000)
     }
   }
 }
