@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from './pages/Home'
 import Cv from './pages/Cv'
 import Books from './pages/Books'
+import Projects from './pages/Projects'
+import Zaubern from './pages/projects/Zaubern'
 import Error404 from './pages/404'
 
 Vue.use(Router)
@@ -26,6 +28,17 @@ export default new Router({
       path: '/books',
       name: 'books',
       component: Books
+    },
+    {
+      path: '/projects',
+      name: 'projects',
+      component: Projects
+    },
+    {
+      path: '/projects/zaubern',
+      name: 'projects.zaubern',
+      meta: { layout: 'clean' },
+      component: Zaubern
     },
     {
       path: '*',
