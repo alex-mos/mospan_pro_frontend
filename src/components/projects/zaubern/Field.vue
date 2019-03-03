@@ -2,9 +2,9 @@
   <div class="wrapper">
 
     <cell
-      v-for="(word, index) in words"
+      v-for="(word, index) in $store.state.words"
       :key="index"
-      :players="playersHere(index)">
+      :id="index">
       {{ word }}
     </cell>
 
@@ -20,46 +20,6 @@ export default {
 
   components: {
     Cell
-  },
-
-  data: function () {
-    return {
-      words: [
-        'stehlen',
-        'schnappen',
-        'beißen',
-        'zerknittern',
-        'pflegen',
-        'schnüffeln',
-        'umfangen',
-        'füttern',
-        'lernen'
-      ],
-
-      // Массив с позициями игроков на клетках.
-      // Игрок с индексом 0 — преподаватель.
-      playerPositions: [
-        0,
-        0
-      ]
-    }
-  },
-
-  methods: {
-    /**
-     * Принимает индекс ячейки, возвращает массив id игроков, которые на ней стоят.
-     * @param {number} cellIndex
-     * @return {Array}
-     */
-    playersHere (cellIndex) {
-      let result = []
-      this.playerPositions.forEach((position, index) => {
-        if (cellIndex === position) {
-          result.push(index)
-        }
-      })
-      return result
-    }
   }
 }
 </script>
@@ -69,4 +29,5 @@ export default {
     display flex
     flex-wrap wrap
     justify-content space-around
+    margin-bottom 30px
 </style>

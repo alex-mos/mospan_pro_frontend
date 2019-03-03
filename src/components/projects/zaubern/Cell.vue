@@ -1,16 +1,22 @@
 <template>
-  <div class="cell">
-    <slot/>
+  <div
+    :class="['cell', { 'cell_with-player': players.length}]">
+    <div class="word">
+      <slot/>
+    </div>
 
+    <transition name="move">
     <div
-      v-if="players.length">
+      v-if="players.length"
+      class="players">
+
       <span
-        v-for="player in players"
-        :key="player">
-        <PlayerIcon
-          :id="player"/>
+        v-for="(player, index) in players"
+        :key="index">
+        <PlayerIcon :id="player"/>
       </span>
     </div>
+    </transition>
   </div>
 </template>
 
@@ -25,8 +31,14 @@ export default {
   },
 
   props: {
-    players: {
-      type: Array
+    id: {
+      type: Number
+    }
+  },
+
+  computed: {
+    players () {
+      return this.$store.getters.playersHere(this.id)
     }
   }
 }
@@ -37,6 +49,7 @@ export default {
   position relative
   margin 20px 20px 0 20px
   padding 30px
+  height 100px
   font-size 25px
   background white
   border 3px solid rgb(170, 170, 170)
@@ -64,4 +77,39 @@ export default {
     border-bottom 8px solid transparent
     border-right 0 solid transparent
     border-top 7px solid transparent
+
+  .word
+    transition transform 200ms linear 1s
+
+  .players
+    position relative
+    top -20px
+
+  &_with-player
+    .word
+      transform translateY(-20px)
+
+.move-enter-active
+  animation coming 1s
+  animation-delay 1.5s
+  opacity 0
+
+.move-leave-active
+  animation going 1s
+  animation-delay 0
+
+@keyframes coming
+  from
+    transform translateX(-150px)
+    opacity 0
+  to
+    transform translateX(0)
+    opacity 1
+
+@keyframes going
+  from
+    transform translateX(0)
+  to
+    transform translateX(150px)
+    opacity 0
 </style>
