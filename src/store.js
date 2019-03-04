@@ -17,24 +17,19 @@ export default new Vuex.Store({
       'füttern',
       'lernen'
     ],
-
     // Массив с позициями игроков на клетках.
     // Игрок с индексом 0 — преподаватель.
-    playersPositions: [
-      4,
-      2
-    ],
-
+    playersPositions: [0, 1],
     activePlayer: 0,
-
+    // activeWord: 'Würfeln!',
+    // Цвета иконок игроков
     colors: [
       '#9c27b0',
       '#4caf50',
       '#ff9800',
       '#3f51b5'
     ],
-
-    diceValue: 3
+    diceValue: '—'
   },
 
   getters: {
@@ -59,7 +54,15 @@ export default new Vuex.Store({
 
     SET_ACTIVE_PLAYER (state, activePlayer) {
       state.activePlayer = activePlayer
-    }
+    },
+
+    SET_DICE_VALUE (state, value) {
+      state.diceValue = value
+    },
+
+    // SET_ACTIVE_WORD (state) {
+    //   state.activeWord = state.words[state.playersPositions[state.activePlayer]]
+    // }
   },
 
   actions: {
@@ -67,7 +70,7 @@ export default new Vuex.Store({
     movePlayer ({ commit, state }, steps) {
       let currentPosition = state.playersPositions[state.activePlayer]
       currentPosition += steps
-      if (currentPosition > state.words.length) {
+      if (currentPosition >= state.words.length) {
         currentPosition -= state.words.length
       }
       commit('SET_PLAYER_POSITION', currentPosition)
@@ -79,8 +82,12 @@ export default new Vuex.Store({
       commit('SET_ACTIVE_PLAYER', nextActivePlayer)
     },
 
+    // Сгенерировать новое значение кубика
     rollTheDice ({ commit, state, dispatch }) {
+      let newDiceValue = Math.floor(Math.random() * (6 - 1 + 1)) + 1
+      commit('SET_DICE_VALUE', newDiceValue)
       dispatch('movePlayer', state.diceValue)
+      // commit('SET_ACTIVE_WORD')
       dispatch('setNextActivePlayer')
     }
   }

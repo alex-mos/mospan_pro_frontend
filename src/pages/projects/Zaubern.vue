@@ -1,18 +1,16 @@
 <template>
   <div>
-    <field />
+    <field/>
 
-    Сейчас ходит
-    <player-icon
-      :id="$store.state.activePlayer" />
+    <div class="text-center">
+      <div class="info">
+        Nächster —
+        <player-icon :id="$store.state.activePlayer"/>
+      </div>
 
-    <dice />
-
-    <Button
-      primary
-      @click="$store.dispatch('rollTheDice')">
-      Roll the dice
-    </Button>
+      <dice
+        @click="$store.dispatch('rollTheDice')"/>
+    </div>
   </div>
 </template>
 
@@ -20,7 +18,6 @@
 import Field from '@/components/projects/zaubern/Field.vue'
 import PlayerIcon from '@/components/projects/zaubern/PlayerIcon.vue'
 import Dice from '@/components/projects/zaubern/Dice.vue'
-import Button from '@/components/ui/Button.vue'
 
 export default {
   name: 'zaubern',
@@ -28,12 +25,13 @@ export default {
   components: {
     Field,
     PlayerIcon,
-    Dice,
-    Button
+    Dice
   }
 }
 </script>
 
 <style lang="stylus" scoped>
-
+.info
+  margin-bottom 10px
+  font-size 18px
 </style>

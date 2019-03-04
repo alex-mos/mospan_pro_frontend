@@ -58,11 +58,11 @@ export default {
   &:before
     display block
     position absolute
-    left -40px
+    left -240px
     top 49%
     content ''
     border-top 3px solid rgb(170, 170, 170)
-    width calc(100% + 80px)
+    width calc(100% + 580px)
     z-index -10
 
   &:after
@@ -100,7 +100,7 @@ export default {
 
 @keyframes coming
   from
-    transform translateX(-150px)
+    transform translateX(-100px)
     opacity 0
   to
     transform translateX(0)
@@ -110,6 +110,6 @@ export default {
   from
     transform translateX(0)
   to
-    transform translateX(150px)
+    transform translateX(100px)
     opacity 0
 </style>

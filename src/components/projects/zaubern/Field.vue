@@ -9,7 +9,6 @@
     </cell>
 
   </div>
-
 </template>
 
 <script>
@@ -30,4 +29,5 @@ export default {
     flex-wrap wrap
     justify-content space-around
     margin-bottom 30px
+    overflow hidden
 </style>
