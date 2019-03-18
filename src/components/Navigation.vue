@@ -22,12 +22,12 @@
             Раздача книг
           </router-link>
         </li>
-        <li>
+        <!--<li>
           <router-link
             :to="{ name: 'projects' }">
             Проекты
           </router-link>
-        </li>
+        </li>-->
       </ul>
     </div>
   </nav>

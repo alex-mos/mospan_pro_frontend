@@ -5,6 +5,7 @@ import Cv from './pages/Cv'
 import Books from './pages/Books'
 import Projects from './pages/Projects'
 import Zaubern from './pages/projects/Zaubern'
+import ZaubernSetup from './pages/projects/ZaubernSetup'
 import Error404 from './pages/404'
 
 Vue.use(Router)
@@ -34,8 +35,14 @@ export default new Router({
       name: 'projects',
       component: Projects
     },
-    {
+    { // страница выбора набора слов и генерации ссылки
       path: '/projects/zaubern',
+      name: 'projects.zaubern.setup',
+      meta: { layout: 'clean' },
+      component: ZaubernSetup
+    },
+    { // страница игры
+      path: '/projects/zaubern/:id',
       name: 'projects.zaubern',
       meta: { layout: 'clean' },
       component: Zaubern

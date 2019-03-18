@@ -6,17 +6,29 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     /* ZAUBERN */
-    words: [
-      'stehlen',
-      'schnappen',
-      'beißen',
-      'zerknittern',
-      'pflegen',
-      'schnüffeln',
-      'umfangen',
-      'füttern',
-      'lernen'
+    wordSets: [
+      [
+        'stehlen',
+        'schnappen',
+        'beißen',
+        'zerknittern',
+        'pflegen',
+        'schnüffeln',
+        'umfangen',
+        'füttern',
+        'lernen'
+      ],
+      [
+        'ein',
+        'zwei',
+        'drei',
+        'zex',
+        'funf',
+        'fear'
+      ]
     ],
+    // индекс выбранного набора слов
+    activeWordsetIndex: null,
     // Массив с позициями игроков на клетках.
     // Игрок с индексом 0 — преподаватель.
     playersPositions: [0, 1],
@@ -42,10 +54,18 @@ export default new Vuex.Store({
         }
       })
       return result
+    },
+    // Набор слов, используемых в текущей игре
+    activeWordset: state => {
+      return state.wordSets[state.activeWordsetIndex]
     }
   },
 
   mutations: {
+    SET_ACTIVE_WORDSET (state, index) {
+      state.activeWordsetIndex = index
+    },
+
     SET_PLAYER_POSITION (state, position) {
       let newPlayersPositions = state.playersPositions.slice()
       newPlayersPositions[state.activePlayer] = position
@@ -58,20 +78,21 @@ export default new Vuex.Store({
 
     SET_DICE_VALUE (state, value) {
       state.diceValue = value
-    },
-
-    // SET_ACTIVE_WORD (state) {
-    //   state.activeWord = state.words[state.playersPositions[state.activePlayer]]
-    // }
+    }
   },
 
   actions: {
+    // Выбрать набор слов для игры
+    selectWordSet ({ commit }, index) {
+      commit('SET_ACTIVE_WORDSET', index)
+    },
+
     // Подвинуть активного игрока на заданное количество шагов
-    movePlayer ({ commit, state }, steps) {
+    movePlayer ({ commit, state, getters }, steps) {
       let currentPosition = state.playersPositions[state.activePlayer]
       currentPosition += steps
-      if (currentPosition >= state.words.length) {
-        currentPosition -= state.words.length
+      if (currentPosition >= getters.activeWordset.length) {
+        currentPosition -= getters.activeWordset.length
       }
       commit('SET_PLAYER_POSITION', currentPosition)
     },
@@ -87,7 +108,6 @@ export default new Vuex.Store({
       let newDiceValue = Math.floor(Math.random() * (6 - 1 + 1)) + 1
       commit('SET_DICE_VALUE', newDiceValue)
       dispatch('movePlayer', state.diceValue)
-      // commit('SET_ACTIVE_WORD')
       dispatch('setNextActivePlayer')
     }
   }

@@ -79,7 +79,7 @@ export default {
     border-top 7px solid transparent
 
   .word
-    transition transform 200ms linear 1s
+    transition transform 200ms linear .5s
 
   .players
     position relative
@@ -90,12 +90,12 @@ export default {
       transform translateY(-20px)
 
 .move-enter-active
-  animation coming 1s
-  animation-delay 1.5s
+  animation coming .5s
+  animation-delay 1s
   opacity 0
 
 .move-leave-active
-  animation going 1s
+  animation going .5s
   animation-delay 0
 
 @keyframes coming

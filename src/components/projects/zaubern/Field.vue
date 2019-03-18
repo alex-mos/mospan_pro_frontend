@@ -2,7 +2,7 @@
   <div class="wrapper">
 
     <cell
-      v-for="(word, index) in $store.state.words"
+      v-for="(word, index) in $store.getters.activeWordset"
       :key="index"
       :id="index">
       {{ word }}
