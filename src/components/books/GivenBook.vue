@@ -40,6 +40,7 @@ export default {
   position relative
   margin-bottom 30px
   max-width 500px
+  min-height 362px
 
   .front-side
     width 100%
