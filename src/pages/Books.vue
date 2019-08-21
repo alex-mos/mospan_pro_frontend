@@ -71,7 +71,7 @@ export default {
         this.books = res.data.data
         this.isPending = false
       })
-      .catch((err) => {
+      .catch(err => {
         this.$toasted.error(err)
         this.isPending = false
       })
