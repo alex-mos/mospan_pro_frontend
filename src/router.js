@@ -6,6 +6,7 @@ import Books from './pages/Books'
 import Projects from './pages/Projects'
 import Zaubern from './pages/projects/Zaubern'
 import ZaubernSetup from './pages/projects/ZaubernSetup'
+import Ink from './pages/projects/Ink'
 import Error404 from './pages/404'
 
 Vue.use(Router)
@@ -46,6 +47,12 @@ export default new Router({
       name: 'projects.zaubern',
       meta: { layout: 'clean' },
       component: Zaubern
+    },
+    {
+      path: '/projects/ink',
+      name: 'projects.ink',
+      meta: { layout: 'clean' },
+      component: Ink
     },
     {
       path: '*',
