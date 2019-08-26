@@ -4,15 +4,23 @@
       <div class="col-xs-12">
         <section>
           <h1>Александр Мосьпан</h1>
-          <h3 class="subtitle">32 года, Москва</h3>
+          <h3 class="subtitle">
+            32 года, Москва
+          </h3>
         </section>
 
         <section>
           <p>6 лет во фронтенд-разработке.</p>
-          <p>В свободное время занимаюсь прохождением курсов и решением задач на образовательных площадках
-            Coursera, freeCodeCamp, CodeWars, KhanAcademy.</p>
-          <p>Использую систему
-            <a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank">GTD</a>
+          <p>
+            В свободное время занимаюсь прохождением курсов и решением задач на образовательных площадках
+            Coursera, freeCodeCamp, CodeWars, KhanAcademy.
+          </p>
+          <p>
+            Использую систему
+            <a
+              href="https://en.wikipedia.org/wiki/Getting_Things_Done"
+              target="_blank"
+            >GTD</a>
             как основу для организации жизни и рабочего процесса. Владею английским языком на уровне intermediate.
           </p>
         </section>
@@ -43,15 +51,24 @@
           <h2>Примеры кода</h2>
           <ul>
             <li>
-              <a href="https://github.com/alex-mos/exp/blob/master/examples/geotiff-upload.js" target="_blank">
+              <a
+                href="https://github.com/alex-mos/exp/blob/master/examples/geotiff-upload.js"
+                target="_blank"
+              >
                 Модуль для проекта на Ember, для загрузки больших файлов, с вычислением их контрольной суммы,
                 и с возможностью возобновления загрузки после обрыва интернет-соединения.
               </a>
             </li>
             <li>
               Этот сайт:
-              <a href="https://github.com/alex-mos/mospan_pro_frontend" target="_blank">фронтенд (на VueJS)</a>,
-              <a href="https://github.com/alex-mos/mospan_pro_backend" target="_blank">бекенд (на Golang)</a>
+              <a
+                href="https://github.com/alex-mos/mospan_pro_frontend"
+                target="_blank"
+              >фронтенд (на VueJS)</a>,
+              <a
+                href="https://github.com/alex-mos/mospan_pro_backend"
+                target="_blank"
+              >бекенд (на Golang)</a>
             </li>
           </ul>
         </section>
@@ -64,7 +81,10 @@
             <li>
               <h3>
                 Фронтенд-разработчик в
-                <a href="https://ozon.ru" target="_blank">
+                <a
+                  href="https://ozon.ru"
+                  target="_blank"
+                >
                   Ozon
                 </a>
               </h3>
@@ -83,13 +103,18 @@
             <li>
               <h3>
                 Фронтенд-разработчик в
-                <a href="http://exactfarming.com" target="_blank">
+                <a
+                  href="http://exactfarming.com"
+                  target="_blank"
+                >
                   ExactFarming
                 </a>
               </h3>
               <p><em>апрель 2017 – апрель 2018</em></p>
-              <p>Разработка сложного веб-приложения для автоматизации агропромышленного бизнеса,
-                с использованием EmberJS;</p>
+              <p>
+                Разработка сложного веб-приложения для автоматизации агропромышленного бизнеса,
+                с использованием EmberJS;
+              </p>
               <p>Многие задачи были связаны с геолокационными данными и работой с картами через leaflet.js;</p>
               <p>Написание юнит- и интеграционных тестов.</p>
             </li>
@@ -97,40 +122,55 @@
             <li>
               <h3>
                 Фронтенд-разработчик в
-                <a href="http://breffi.ru" target="_blank">
+                <a
+                  href="http://breffi.ru"
+                  target="_blank"
+                >
                   Breffi
                 </a>
               </h3>
               <p><em>март 2016 – февраль 2017</em></p>
-              <p>Разработка b2b-приложения для и для ведения маркетинговых кампаний
-                поставщиками медицинских препаратов;</p>
+              <p>
+                Разработка b2b-приложения для и для ведения маркетинговых кампаний
+                поставщиками медицинских препаратов;
+              </p>
               <p>Координация работы отдела верстальщиков.</p>
             </li>
 
             <li>
               <h3>
                 Фронтенд-разработчик в
-                <a href="http://emias.info" target="_blank">
+                <a
+                  href="http://emias.info"
+                  target="_blank"
+                >
                   Emias.info
                 </a>
               </h3>
               <p><em>январь 2015 – декабрь 2015</em></p>
-              <p>Вёрстка и разработка интерфейса веб-приложения для записи в городские больницы.
-                Приложением пользовались более четырёхсот тысяч человек ежемесячно.</p>
+              <p>
+                Вёрстка и разработка интерфейса веб-приложения для записи в городские больницы.
+                Приложением пользовались более четырёхсот тысяч человек ежемесячно.
+              </p>
               <p>Создание модуля на AngularJS, работа с бизнес-логикой на чистом JS и много вёрстки.</p>
             </li>
 
             <li>
               <h3>
                 Младший фронтенд-разработчик в
-                <a href="http://sijeko.ru" target="_blank">
+                <a
+                  href="http://sijeko.ru"
+                  target="_blank"
+                >
                   Sijeko
                 </a>
               </h3>
               <p><em>март 2013 – май 2014</em></p>
               <p>Создание различных вебсайтов на HTML, CSS и jQuery;</p>
-              <p>Поддержка и доработка множества сайтов на различных платформах,
-                таких как Drupal, ModX, Symphony и т.д.</p>
+              <p>
+                Поддержка и доработка множества сайтов на различных платформах,
+                таких как Drupal, ModX, Symphony и т.д.
+              </p>
             </li>
           </ul>
         </section>
@@ -138,7 +178,10 @@
         <section>
           <h2>Образование</h2>
           <h3>
-            <a href="http://www.bstu.ru/" target="_blank">
+            <a
+              href="http://www.bstu.ru/"
+              target="_blank"
+            >
               Белгородский Государственный Технологический Университет им. В.Г. Шухова
             </a>
           </h3>
@@ -308,7 +351,7 @@
 
 <script>
 export default {
-  name: 'cv',
+  name: 'Cv',
   data: function () {
     return {}
   }

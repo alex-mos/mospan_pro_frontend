@@ -1,13 +1,12 @@
 <template>
   <div class="wrapper">
-
     <cell
       v-for="(word, index) in $store.getters.activeWordset"
+      :id="index"
       :key="index"
-      :id="index">
+    >
       {{ word }}
     </cell>
-
   </div>
 </template>
 
@@ -15,7 +14,7 @@
 import Cell from '@/components/projects/zaubern/Cell'
 
 export default {
-  name: 'field',
+  name: 'Field',
 
   components: {
     Cell

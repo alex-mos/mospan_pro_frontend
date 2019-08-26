@@ -2,7 +2,8 @@
   <button
     :class="{ primary }"
     :type="type"
-    @click="$emit('click')">
+    @click="$emit('click')"
+  >
     <slot />
   </button>
 </template>

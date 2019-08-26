@@ -1,21 +1,23 @@
 <template>
   <div
-    :class="['cell', { 'cell_with-player': players.length}]">
+    :class="['cell', { 'cell_with-player': players.length}]"
+  >
     <div class="word">
-      <slot/>
+      <slot />
     </div>
 
     <transition name="move">
-    <div
-      v-if="players.length"
-      class="players">
-
-      <span
-        v-for="(player, index) in players"
-        :key="index">
-        <PlayerIcon :id="player"/>
-      </span>
-    </div>
+      <div
+        v-if="players.length"
+        class="players"
+      >
+        <span
+          v-for="(player, index) in players"
+          :key="index"
+        >
+          <PlayerIcon :id="player" />
+        </span>
+      </div>
     </transition>
   </div>
 </template>
@@ -24,7 +26,7 @@
 import PlayerIcon from '@/components/projects/zaubern/PlayerIcon'
 
 export default {
-  name: 'cell',
+  name: 'Cell',
 
   components: {
     PlayerIcon

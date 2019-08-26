@@ -1,12 +1,15 @@
 <template>
   <div
     ref="book"
-    class="book">
+    class="book"
+  >
     <div
-      :class="[isOpen ? 'is-open' : '', 'button']">
+      :class="[isOpen ? 'is-open' : '', 'button']"
+    >
       <div
         v-if="!isOrdered && !isPending"
-        class="button__back-side">
+        class="button__back-side"
+      >
         <div class="info">
           <div class="author">
             {{ author }}
@@ -20,36 +23,42 @@
           <div class="more">
             <a
               :href="goodreadsLink"
-              target="_blank">
+              target="_blank"
+            >
               Подробнее о книге
             </a>
           </div>
         </div>
         <div class="form-wrapper">
           <form
-            @submit.prevent>
+            @submit.prevent
+          >
             <label
-              :for="`telegram-${id}`">
+              :for="`telegram-${id}`"
+            >
               Ваш логин в телеграме:
             </label>
             <input
-              v-model="telegramLogin"
               :id="`telegram-${id}`"
-              type="text"
               ref="telegramLogin"
+              v-model="telegramLogin"
+              type="text"
               @keydown.esc="cancel()"
-              @keydown.enter="submit(id)">
+              @keydown.enter="submit(id)"
+            >
           </form>
           <div class="buttons">
             <Button
-              @click="cancel()">
+              @click="cancel()"
+            >
               отмена
             </Button>
             <Button
               primary
               type="submit"
+              :disabled="!telegramLogin"
               @click="submit(id)"
-              :disabled="!telegramLogin">
+            >
               заказать
             </Button>
           </div>
@@ -58,25 +67,38 @@
 
       <div
         v-if="isPending"
-        class="button__back-side button__back-side_loader">
+        class="button__back-side button__back-side_loader"
+      >
         <div class="img-wrapper">
-          <img src="/img/loader.svg" alt="loader">
+          <img
+            src="/img/loader.svg"
+            alt="loader"
+          >
         </div>
       </div>
 
       <div
         v-if="!isOrdered"
         class="button__front-side"
-        @click="flipToBack()">
-        <img :src="coverURL" class="img-responsive">
+        @click="flipToBack()"
+      >
+        <img
+          :src="coverURL"
+          class="img-responsive"
+        >
       </div>
 
       <div
         v-else
-        class="button__front-side button__front-side_ordered">
-        <img :src="coverURL" class="img-responsive">
+        class="button__front-side button__front-side_ordered"
+      >
+        <img
+          :src="coverURL"
+          class="img-responsive"
+        >
         <div
-          class="banner">
+          class="banner"
+        >
           обещана
         </div>
       </div>

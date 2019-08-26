@@ -7,10 +7,12 @@
         v-for="(set, index) in wordSets"
         :key="index"
         :class="['word-set', {'active': index === $store.state.activeWordsetIndex}]"
-        @click="$store.dispatch('selectWordSet', index)">
+        @click="$store.dispatch('selectWordSet', index)"
+      >
         <li
           v-for="word in set"
-          :key="word">
+          :key="word"
+        >
           <span>{{ word }}</span>&thinsp;
         </li>
       </ul>
@@ -18,7 +20,8 @@
 
     <div
       v-if="$store.state.activeWordsetIndex !== null"
-      class="link-wrapper">
+      class="link-wrapper"
+    >
       Отправьте ссылку ученикам:
 
       <div class="link">
@@ -26,7 +29,8 @@
       </div>
 
       <router-link
-        :to="{name: 'projects.zaubern', params: { id: 'ZhN37ie4Gkg5J3' }}">
+        :to="{name: 'projects.zaubern', params: { id: 'ZhN37ie4Gkg5J3' }}"
+      >
         Начать игру
       </router-link>
     </div>

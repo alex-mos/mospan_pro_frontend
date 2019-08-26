@@ -1,15 +1,16 @@
 <template>
   <div>
-    <field/>
+    <field />
 
     <div class="text-center">
       <div class="info">
         Nächster —
-        <player-icon :id="$store.state.activePlayer"/>
+        <player-icon :id="$store.state.activePlayer" />
       </div>
 
       <dice
-        @click="$store.dispatch('rollTheDice')"/>
+        @click="$store.dispatch('rollTheDice')"
+      />
     </div>
   </div>
 </template>
@@ -20,7 +21,7 @@ import PlayerIcon from '@/components/projects/zaubern/PlayerIcon.vue'
 import Dice from '@/components/projects/zaubern/Dice.vue'
 
 export default {
-  name: 'zaubern',
+  name: 'Zaubern',
 
   components: {
     Field,

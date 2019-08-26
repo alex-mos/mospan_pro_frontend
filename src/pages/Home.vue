@@ -3,8 +3,16 @@
     <div>
       Привет, меня зовут Александр Мосьпан и я
       <ul>
-        <li><router-link to="/cv">работаю фронтендером уже шесть лет</router-link></li>
-        <li><router-link to="/books">бесплатно раздаю книжки, которые прочитал</router-link></li>
+        <li>
+          <router-link to="/cv">
+            работаю фронтендером уже шесть лет
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/books">
+            бесплатно раздаю книжки, которые прочитал
+          </router-link>
+        </li>
         <!--<li><router-link to="/projects">делаю веб-приложения для себя и на заказ</router-link></li>-->
         <!--<li><router-link to="/timeline">смотрю, читаю и слушаю</router-link></li>-->
       </ul>
@@ -14,7 +22,7 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'Home'
 }
 </script>
 

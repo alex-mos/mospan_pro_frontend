@@ -6,19 +6,22 @@
           <router-link
             class="main"
             :to="{ name: 'home' }"
-            exact>
+            exact
+          >
             mospan.pro
           </router-link>
         </li>
         <li>
           <router-link
-            :to="{ name: 'cv' }">
+            :to="{ name: 'cv' }"
+          >
             Резюме
           </router-link>
         </li>
         <li>
           <router-link
-            :to="{ name: 'books' }">
+            :to="{ name: 'books' }"
+          >
             Раздача книг
           </router-link>
         </li>

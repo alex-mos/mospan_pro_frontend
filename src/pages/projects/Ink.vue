@@ -2,12 +2,12 @@
   <div>
     <div class="container">
       <div
-        class="textarea"
         ref="textarea"
+        class="textarea"
         contenteditable="true"
         @keydown="onKeyDown"
         @keyup="onKeyUp"
-      ></div>
+      />
     </div>
   </div>
 </template>
@@ -23,6 +23,9 @@ export default {
       previousKey: null,
       letters: /^[a-zA-Z0-9a-яё\-_+=!@#;%:?*()\[\]\<\>\/\`\\]{1}$/
     }
+  },
+  mounted () {
+    this.$refs.textarea.focus()
   },
   methods: {
     onKeyDown (e) {
@@ -68,9 +71,6 @@ export default {
         textRange.select()
       }
     }
-  },
-  mounted () {
-    this.$refs.textarea.focus()
   }
 }
 </script>

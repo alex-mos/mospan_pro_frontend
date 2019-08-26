@@ -8,19 +8,25 @@
 
       <div
         v-if="isPending"
-        class="button__back-side button__back-side_loader">
+        class="button__back-side button__back-side_loader"
+      >
         <div class="img-wrapper">
-          <img src="/img/loader.svg" alt="loader">
+          <img
+            src="/img/loader.svg"
+            alt="loader"
+          >
         </div>
       </div>
 
       <div
         v-else
-        class="row">
+        class="row"
+      >
         <div
           v-for="(book, index) in books"
           :key="index"
-          class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-lg-3">
+          class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4 col-lg-3"
+        >
           <book
             v-if="book.status === 'free' || isDemo"
             :id="book.id"
@@ -28,14 +34,16 @@
             :author="book.author"
             :edition="book.edition"
             :status="book.status"
-            :goodreadsLink="book.goodreads_link"
-            :coverURL="book.cover_url"
-            :isDemo="isDemo"/>
+            :goodreads-link="book.goodreads_link"
+            :cover-u-r-l="book.cover_url"
+            :is-demo="isDemo"
+          />
 
           <given-book
             v-else
             :status="book.status"
-            :coverURL="book.cover_url"/>
+            :cover-u-r-l="book.cover_url"
+          />
         </div>
       </div>
     </div>
@@ -47,7 +55,7 @@ import http from '@/plugins/http'
 import Book from '@/components/books/Book.vue'
 import GivenBook from '@/components/books/GivenBook.vue'
 export default {
-  name: 'books',
+  name: 'Books',
   components: {
     Book,
     GivenBook

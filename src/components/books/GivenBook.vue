@@ -1,16 +1,21 @@
 <template>
   <div class="book">
     <div class="front-side">
-      <img :src="coverURL" class="img-responsive">
+      <img
+        :src="coverURL"
+        class="img-responsive"
+      >
       <div
         v-if="status === 'reserved'"
-        class="banner banner_reserved">
+        class="banner banner_reserved"
+      >
         обещана
       </div>
 
       <div
         v-if="status === 'sent'"
-        class="banner banner_sent">
+        class="banner banner_sent"
+      >
         отправлена
       </div>
     </div>

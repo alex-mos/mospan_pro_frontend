@@ -1,7 +1,8 @@
 <template>
   <div
     class="dice"
-    @click="$emit('click')">
+    @click="$emit('click')"
+  >
     {{ $store.state.diceValue }}
 
     <div class="hint">
@@ -12,7 +13,7 @@
 
 <script>
 export default {
-  name: 'dice'
+  name: 'Dice'
 }
 </script>
 

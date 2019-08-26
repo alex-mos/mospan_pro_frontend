@@ -1,7 +1,8 @@
 <template>
   <section>
     <router-link
-    :to="{name: 'projects.zaubern.setup'}">
+      :to="{name: 'projects.zaubern.setup'}"
+    >
       Zaubern
     </router-link>
     — Сетевая игра для уроков немецкого языка.
