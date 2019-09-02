@@ -1,14 +1,22 @@
 <template>
-  <div>
-    <div class="container">
-      <div
-        ref="textarea"
-        class="textarea"
-        contenteditable="true"
-        @keydown="onKeyDown"
-        @keyup="onKeyUp"
-      />
+  <div class="container">
+    <div
+      class="textarea"
+      ref="textarea"
+    >
+      <span>&nbsp;</span>
     </div>
+
+    <div>
+      fontWeight: {{ fontWeight }}
+    </div>
+
+    <!-- фейковый инпут, на который наводится фокус при загрузке страницы. Нужен чтобы отлавливать события нажатия клавиш-->
+    <input
+      class="fakeInput"
+      ref="fakeInput"
+      @keydown="onKeyDown"
+    />
   </div>
 </template>
 
@@ -17,72 +25,78 @@ export default {
   name: 'Ink',
   data () {
     return {
-      text: '',
-      fontWeight: 10,
-      isKeyUp: true,
-      previousKey: null,
-      letters: /^[a-zA-Z0-9a-яё\-_+=!@#;%:?*()\[\]\<\>\/\`\\]{1}$/
+      textarea: null,
+      fontWeight: 100,
+      lastChar: null,
+      acceptedLetters: /^[a-zA-Z0-9a-яё\-_+=!@#;%:?*()[\]<>/`\\\s,.]{1}$/
     }
   },
   mounted () {
-    this.$refs.textarea.focus()
+    this.textarea = this.$refs.textarea
+
+    setInterval(() => {
+      this.$refs.fakeInput.focus()
+      this.incrementFontWeight()
+    }, 20)
   },
   methods: {
-    onKeyDown (e) {
-      if (this.letters.test(e.key)) {
-        console.log('this.letters.test(e.key)')
-        console.log(this.letters.test(e.key))
-        e.preventDefault()
-        if (this.isKeyUp || e.key !== this.previousKey) {
-          this.text += `<span style="font-weight: ${this.fontWeight}">${e.key}</span>`
-          this.$refs.textarea.innerHTML = this.text
-          // this.$refs.textarea.value = this.text
-          this.$refs.textarea.selectionStart = this.$refs.textarea.selectionEnd = this.$refs.textarea.innerHTML.length
-          this.previousKey = e.key
-          this.isKeyUp = false
-          this.placeCaretAtEnd(this.$refs.textarea)
-        } else {
-          this.fontWeight += 10
-          console.log(this.fontWeight)
-        }
-        console.log(e)
+    // увеличить жирность последнего символа
+    incrementFontWeight () {
+      if (this.fontWeight <= 900 && this.lastChar) {
+        this.lastChar.style.fontWeight = this.fontWeight
+        this.fontWeight += 10
       }
     },
-    onKeyUp () {
-      this.isKeyUp = true
-      this.fontWeight = 10
+    // обработчик нажатия кнопки
+    onKeyDown (e) {
+      if (this.acceptedLetters.test(e.key)) {
+        let char = document.createElement('span')
+        char.textContent = e.key
+        char.style.fontWeight = 100
+        this.textarea.append(char)
+        this.lastChar = this.textarea.lastChild
+        this.fontWeight = 100
+      } else if (e.key === 'Backspace') {
+        this.deletePreviousChar()
+      } else {
+        e.preventDefault()
+      }
     },
-
-    // поставить курсор в конец редактируемого элемента
-    // https://stackoverflow.com/a/4238971/1538729
-    placeCaretAtEnd (el) {
-      el.focus()
-      if (typeof window.getSelection !== 'undefined' && typeof document.createRange !== 'undefined') {
-        let range = document.createRange()
-        range.selectNodeContents(el)
-        range.collapse(false)
-        let sel = window.getSelection()
-        sel.removeAllRanges()
-        sel.addRange(range)
-      } else if (typeof document.body.createTextRange !== 'undefined') {
-        let textRange = document.body.createTextRange()
-        textRange.moveToElementText(el)
-        textRange.collapse(false)
-        textRange.select()
+    // удаление предыдущего символа
+    deletePreviousChar () {
+      if (Object.keys(this.textarea.children).length > 1) {
+        this.textarea.removeChild(this.lastChar)
+        this.lastChar = this.textarea.lastChild
       }
     }
   }
 }
 </script>
 
-<style scoped>
-.textarea {
-  padding-top: 50px;
-  width: 100%;
-  min-height: 400px;
-  font-size: 24px;
-  outline: none;
-  background-color: transparent;
-  border: none;
-}
+<style lang="stylus">
+.textarea
+  padding-top: 50px
+  width: 100%
+  min-height: 400px
+  font-size: 34px
+  outline: none
+  background-color: transparent
+  border: none
+
+  span:last-child
+    position relative
+
+    &:after
+      display: block
+      position: absolute
+      right: -7px
+      bottom: 2px
+      width: 3px
+      height: 1em
+      background-color: #4b4b4b
+      content: ''
+
+.fakeInput
+  position: absolute
+  top: -1000px
 </style>
