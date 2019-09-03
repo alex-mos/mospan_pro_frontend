@@ -1,16 +1,63 @@
 version: '3'
 
 services:
-  frontend:
-    container_name: mospan_pro_frontend
+  # Приложение 1, для балансировки
+  frontend1:
+    container_name: mospan_pro_frontend1
+    restart: always
+    build: .
+    networks:
+      mospan:
+    ports:
+      - '8080:8080'
+    env_file:
+      - .env
+  # Приложение 2, для балансировки, копия приложения 1, но на другом порту
+  frontend2:
+    container_name: mospan_pro_frontend2
+    restart: always
+    build: .
+    networks:
+      mospan:
+    ports:
+      - '8072:8080'
+    env_file:
+      - .env
+  # Приложение 3, просто отдельное приложение
+  frontend3:
+    container_name: mospan_pro_frontend3
+    restart: always
+    build: .
+    networks:
+      mospan:
+    ports:
+      - '8063:8080'
+    env_file:
+      - .env
+  # Приложение 4, просто отдельное приложение
+  frontend4:
+    container_name: mospan_pro_frontend4
+    restart: always
+    build: .
+    networks:
+      mospan:
+    ports:
+      - '8064:8080'
+    env_file:
+      - .env
+  # Nginx разруливает приложения
+  # * mospan.pro балансируется то с одного фронтенда/бекенда, то с другого;
+  # * app3.mospan.pro — отдельное приложение, без балансировки;
+  # * app4.mospan.pro — отдельное приложение, без балансировки.
+  nginx:
+    container_name: mospan_pro_nginx
     restart: always
     build: .
     networks:
       mospan:
     ports:
       - '80:80'
-    env_file:
-      - .env
+      - '443:443'
 
 networks:
   mospan:
