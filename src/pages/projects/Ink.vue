@@ -7,9 +7,7 @@
       <span>&nbsp;</span>
     </div>
 
-    <div>
-      fontWeight: {{ fontWeight }}
-    </div>
+    <!--<div>fontWeight: {{ fontWeight }}</div>-->
 
     <!-- фейковый инпут, на который наводится фокус при загрузке страницы. Нужен чтобы отлавливать события нажатия клавиш-->
     <input
@@ -21,12 +19,15 @@
 </template>
 
 <script>
+
+const START_FONT_WEIGHT = 300
+
 export default {
   name: 'Ink',
   data () {
     return {
       textarea: null,
-      fontWeight: 100,
+      fontWeight: START_FONT_WEIGHT,
       lastChar: null,
       acceptedLetters: /^[a-zA-Z0-9a-яё\-_+=!@#;%:?*()[\]<>/`\\\s,.]{1}$/
     }
@@ -44,7 +45,7 @@ export default {
     incrementFontWeight () {
       if (this.fontWeight <= 900 && this.lastChar) {
         this.lastChar.style.fontWeight = this.fontWeight
-        this.fontWeight += 10
+        this.fontWeight += 30
       }
     },
     // обработчик нажатия кнопки
@@ -52,10 +53,10 @@ export default {
       if (this.acceptedLetters.test(e.key)) {
         let char = document.createElement('span')
         char.textContent = e.key
-        char.style.fontWeight = 100
+        char.style.fontWeight = START_FONT_WEIGHT
         this.textarea.append(char)
         this.lastChar = this.textarea.lastChild
-        this.fontWeight = 100
+        this.fontWeight = START_FONT_WEIGHT
       } else if (e.key === 'Backspace') {
         this.deletePreviousChar()
       } else {
@@ -78,10 +79,13 @@ export default {
   padding-top: 50px
   width: 100%
   min-height: 400px
-  font-size: 34px
+  font-family "Fira Code"
+  font-size: 40px
   outline: none
   background-color: transparent
   border: none
+  white-space pre-wrap
+  text-indent -1ex
 
   span:last-child
     position relative
