@@ -7,6 +7,7 @@ import Projects from './pages/Projects'
 import Zaubern from './pages/projects/Zaubern'
 import ZaubernSetup from './pages/projects/ZaubernSetup'
 import Ink from './pages/projects/Ink'
+import HookExample from './pages/projects/HookExample/index'
 import Error404 from './pages/404'
 
 Vue.use(Router)
@@ -53,6 +54,12 @@ export default new Router({
       name: 'projects.ink',
       meta: { layout: 'clean' },
       component: Ink
+    },
+    {
+      path: '/projects/hook',
+      name: 'projects.hook',
+      meta: { layout: 'clean' },
+      component: HookExample
     },
     {
       path: '*',
