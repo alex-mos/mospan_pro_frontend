@@ -225,7 +225,6 @@ export default {
           this.$toasted.error(err)
         })
         .finally(() => {
-          this.isOrdered = false
           this.isOpen = false
           this.isPending = false
         })
