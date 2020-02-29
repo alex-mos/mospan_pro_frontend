@@ -72,17 +72,14 @@ export default {
       return Boolean(this.$route.query.demo)
     }
   },
-  mounted () {
+  async mounted () {
     this.isPending = true
-    http.get('books')
-      .then(res => {
-        this.books = res.data.data
-        this.isPending = false
-      })
-      .catch(err => {
-        this.$toasted.error(err)
-        this.isPending = false
-      })
+    try {
+      this.books = (await http.get('books')).data.data
+    } catch (e) {
+      this.$toasted.error(e)
+    }
+    this.isPending = false
   }
 }
 </script>

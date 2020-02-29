@@ -197,10 +197,8 @@ export default {
       this.tiltEnable()
     },
 
-    submit (id) {
-      if (!this.telegramLogin) {
-        return
-      }
+    async submit (id) {
+      if (!this.telegramLogin) return
 
       // демо-заказ
       if (this.isDemo) {
@@ -211,23 +209,18 @@ export default {
       this.isPending = true
       let formData = new FormData()
       formData.append('telegram', this.telegramLogin)
-      http.post(`order/${id}`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      })
-        .then(() => {
-          this.isOrdered = true
-          this.isOpen = false
-          this.isPending = false
+      try {
+        await http.post(`order/${id}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
         })
-        .catch((err) => {
-          this.$toasted.error(err)
-        })
-        .finally(() => {
-          this.isOpen = false
-          this.isPending = false
-        })
+        this.isOrdered = true
+      } catch (e) {
+        this.$toasted.error(e)
+      }
+      this.isOpen = false
+      this.isPending = false
     },
 
     demoSubmit () {
