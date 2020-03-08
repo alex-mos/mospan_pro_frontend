@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "skipLibCheck": true, // https://github.com/nuxt/nuxt.js/issues/4877
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "target": "esnext",
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "lib": [
+      "esnext",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "types": [
+      "webpack-env"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    }
+  }
+}

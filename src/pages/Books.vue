@@ -53,7 +53,8 @@
 <script>
 import http from '@/plugins/http'
 import Book from '@/components/books/Book.vue'
-import GivenBook from '@/components/books/GivenBook.vue'
+import GivenBook from '@/components/books/GivenBook.tsx'
+
 export default {
   name: 'Books',
   components: {
