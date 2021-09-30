@@ -2,18 +2,6 @@
   <div class="container">
     <div>
       Hi, I'm Alexander Mospan, <router-link to="/cv">a front-end developer</router-link>
-<!--      <ul>-->
-<!--        <li>-->
-<!--          <router-link to="/cv">-->
-<!--            I'm a Front-end developer-->
-<!--          </router-link>-->
-<!--        </li>-->
-<!--        <li>-->
-<!--          <router-link to="/books">-->
-<!--            бесплатно раздаю книжки, которые прочитал-->
-<!--          </router-link>-->
-<!--        </li>-->
-<!--      </ul>-->
     </div>
   </div>
 </template>
