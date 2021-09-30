@@ -1,17 +1,17 @@
 <template>
   <div>
-    <navigation />
+<!--    <navigation />-->
     <slot />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue'
+// import Navigation from '@/components/Navigation.vue'
 
 export default {
   name: 'Default',
   components: {
-    Navigation
+    // Navigation
   }
 }
 </script>

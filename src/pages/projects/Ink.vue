@@ -20,14 +20,15 @@
 
 <script>
 
-const START_FONT_WEIGHT = 300
+const MIN_FONT_WEIGHT = 1
+const MAX_FONT_WEIGHT = 900
 
 export default {
   name: 'Ink',
   data () {
     return {
       textarea: null,
-      fontWeight: START_FONT_WEIGHT,
+      fontWeight: MIN_FONT_WEIGHT,
       lastChar: null,
       acceptedLetters: /^[a-zA-Z0-9a-яё\-_+=!@#;%:?*()[\]<>/`\\\s,.]{1}$/
     }
@@ -43,9 +44,9 @@ export default {
   methods: {
     // увеличить жирность последнего символа
     incrementFontWeight () {
-      if (this.fontWeight <= 900 && this.lastChar) {
+      if (this.fontWeight <= MAX_FONT_WEIGHT && this.lastChar) {
         this.lastChar.style.fontWeight = this.fontWeight
-        this.fontWeight += 30
+        this.fontWeight += 20
       }
     },
     // обработчик нажатия кнопки
@@ -53,10 +54,10 @@ export default {
       if (this.acceptedLetters.test(e.key)) {
         let char = document.createElement('span')
         char.textContent = e.key
-        char.style.fontWeight = START_FONT_WEIGHT
+        char.style.fontWeight = MIN_FONT_WEIGHT
         this.textarea.append(char)
         this.lastChar = this.textarea.lastChild
-        this.fontWeight = START_FONT_WEIGHT
+        this.fontWeight = MIN_FONT_WEIGHT
       } else if (e.key === 'Backspace') {
         this.deletePreviousChar()
       } else {
@@ -79,7 +80,7 @@ export default {
   padding-top: 50px
   width: 100%
   min-height: 400px
-  font-family "Fira Code"
+  font-family "Inter"
   font-size: 40px
   outline: none
   background-color: transparent
