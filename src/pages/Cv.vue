@@ -227,19 +227,17 @@
         </section>
 
         <section>
-        <p>8 years in frontend development.</p>
-        <p>In spare time I upgrade my professional skills by learning at Coursera, freeCodeCamp, CodeWars, KhanAcademy.</p>
-        <p>I use <a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank">GTD</a> as a main life management system.
-        </p>
+        <p>Eight years in front-end development.</p>
+        <p>In my spare time, I upgrade my professional skills by learning at Coursera, freeCodeCamp, CodeWars, KhanAcademy.</p>
+        <p>I use <a href="https://en.wikipedia.org/wiki/Getting_Things_Done" target="_blank">GTD</a> as a main life management system.</p>
         </section>
 
         <section>
           <h2>Technology I use in production</h2>
           <p>
-            I create client web applications with VueJS (EmberJS and AngularJS in the past).<br>
-            Although a have strong HTML and CSS skills, sometimes I use component libraries such as Vuetify or Bootstrap.<br>
-            Usually, I utilize REST of WebSocket API.<br>
-            I work on macOS with WebStorm.
+            I'm proficient with Vue.js and its ecosystem.<br>
+            I've developed applications with Vuetify and Tailwind UI frameworks. I've also had experience in building UI-kit from scratch using Storybook.<br>
+            In 2013-2017 I worked with jQuery and Ember.js.
           </p>
         </section>
 
@@ -271,7 +269,7 @@
           <ul class="companies">
             <li>
               <h3>
-                Frontend Developer at
+                Front-end Developer at
                 <a href="https://urbamatica.com/" target="_blank">
                   Urbamatica
                 </a>
@@ -281,7 +279,7 @@
 
             <li>
               <h3>
-                Frontend Developer at
+                Front-end Developer at
                 <a href="https://ozon.ru" target="_blank">
                   Ozon
                 </a>
@@ -290,16 +288,16 @@
             </li>
 
             <li>
-              <h3>Frontend Developer at Media Target</h3>
+              <h3>Front-end Developer at Media Target</h3>
               <p><em>April 2018 – July 2019</em></p>
-              <p>Creating SPA with VueJS for various web-projects;</p>
-              <p>Dynamic charts with realtime data updating;</p>
-              <p>Websocket usage for communicating with server.</p>
+              <p>Creating SPA with VueJS for various web projects;</p>
+              <p>Dynamic charts with real-time data updating;</p>
+              <p>Websocket usage for communicating with the server.</p>
             </li>
 
             <li>
               <h3>
-                Frontend Developer at
+                Front-end Developer at
                 <a href="http://exactfarming.com" target="_blank">
                   ExactFarming
                 </a>
@@ -312,39 +310,39 @@
 
             <li>
               <h3>
-                Frontend Developer at
+                Front-end Developer at
                 <a href="http://breffi.ru" target="_blank">
                   Breffi
                 </a>
               </h3>
               <p><em>March 2016 – February 2017</em></p>
               <p>Creating b2b-application for meds supply accounting system and launching marketing campaigns.</p>
-              <p>coordination of frontend department process.</p>
+              <p>Coordination of front-end department process.</p>
             </li>
 
             <li>
               <h3>
-                Frontend Developer at
+                Front-end Developer at
                 <a href="http://emias.info" target="_blank">
                   Emias.info
                 </a>
               </h3>
               <p><em>January 2015 – December 2015</em></p>
-              <p>Development of application for appointments in public hospitals used by more than 400 000 patients
+              <p>Development of an application for appointments in public hospitals used by more than 400 000 patients
                 monthly;</p>
-              <p>Creating AngularJS modules, developing of business logic using VanillaJS and HTML-based tasks.</p>
+              <p>AngularJS modules creation, developing business logic using VanillaJS and HTML-based tasks.</p>
             </li>
 
             <li>
               <h3>
-                jr. Frontend Developer at
+                jr. Front-end Developer at
                 <a href="http://sijeko.ru" target="_blank">
                   Sijeko
                 </a>
               </h3>
               <p><em>March 2013 – May 2014</em></p>
-              <p>Creating diverse websites with HTML, CSS and jQuery;</p>
-              <p>Support and improvement of sites on various platforms such as Drupal, ModX, Symphony etc.</p>
+              <p>Creating diverse websites with HTML, CSS, and jQuery;</p>
+              <p>Support and improvement of sites on various platforms such as Drupal, ModX, Symphony, etc.</p>
             </li>
           </ul>
         </section>
@@ -360,7 +358,7 @@
 
           <ul>
             <li>
-              Mechanical engenering graduate (2004 – 2009)
+              Mechanical engineering graduate (2004 – 2009)
             </li>
             <li>
               Translator for professional interaction graduate (2004 – 2009)
