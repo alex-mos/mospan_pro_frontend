@@ -66,14 +66,15 @@
                 </a>
               </h3>
               <p><em>July 2019 – September 2021</em></p>
+              <p>Ozon is one of the largest marketplaces in Russia. As a part of its team, I've developed a page for postings control and made an interface for monitoring every aspect of sales flow in real-time.
+              <p>After that, I improved the user experience by separating reusable controls into the independent UI kit and polishing each component.</p>
+              <p>Besides that, I've made a recommendation system for sellers, a commissions calculation page, and much more.</p>
             </li>
 
             <li>
               <h3>Front-end Developer at Media Target</h3>
               <p><em>April 2018 – July 2019</em></p>
-              <p>Creating SPA with VueJS for various web projects;</p>
-              <p>Dynamic charts with real-time data updating;</p>
-              <p>Websocket usage for communicating with the server.</p>
+              <p>Media Target is a company that develops many not big yet useful applications, for example, VPN browser extension that allows redirecting web traffic over other countries to avoid site blocking. The development process wasn't especially challenging, but I had had a good opportunity to get used to working with extensions and service workers.</p>
             </li>
 
             <li>
@@ -84,9 +85,8 @@
                 </a>
               </h3>
               <p><em>April 2017 – April 2018</em></p>
-              <p>Development complex web-application for farm business using EmberJS;</p>
-              <p>Numerous tasks related to geolocation and LeafletJS;</p>
-              <p>Unit and integration testing.</p>
+              <p>ExactFarming is a quite advanced web application using by farmers to manage their fields and crops with the help of regularly updated satellite or drone photos.</p>
+              <p>I've done some layers on the map — for example, photos with descriptions bound to geolocation data received by the Geolocation API. I've also made field editing and interactive manuals, showing app features with series of tooltips.</p>
             </li>
 
             <li>
